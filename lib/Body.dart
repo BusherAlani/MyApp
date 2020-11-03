@@ -36,10 +36,15 @@ class BodyPage extends StatelessWidget {
             right: 5,
           ),
           width: 700,
-          height: 650,
+          height: 655,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(30)),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
+              bottomLeft: Radius.zero,
+              bottomRight: Radius.zero,
+            ),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(1.0),
@@ -48,8 +53,73 @@ class BodyPage extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              
-            ]
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(13),
+                height: 130,
+                width: 360,
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                ),
+                child: Container(
+                  padding: EdgeInsets.all(1),
+                  child: Stack(
+                    alignment: Alignment.topLeft,
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              "Meet&Greet",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: Colors.black,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "OpenSans-SemiBold",
+                                  ),
+                            ),
+                            Text("Adoptable pets \n Located in over\n 1,600 Stores.",
+                             style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  .copyWith(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontFamily: "Cairo-SemiBold",
+                                  ),
+
+                            )
+                          ],
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Image.asset(
+                          'assets/image/resize.jpeg',
+                          height: 100,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Text(
+                "Featured pets ",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
+              ),
+              Icon(
+                Icons.art_track,
+                color: Colors.black,
+              ),
+            ],
           ),
         ),
       ],

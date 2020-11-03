@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
-          primaryColor: kBackgroundColor,
+          primaryColor: kPrimaryColor,
           textTheme:
               Theme.of(context).textTheme.apply(bodyColor: kPrimaryColor),
           visualDensity: VisualDensity.adaptivePlatformDensity,
