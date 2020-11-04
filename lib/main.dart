@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_app2/Body.dart';
 import 'Const.dart';
-
 void main() {
   runApp(MyApp());
 }
@@ -22,7 +21,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.teal[900],
           appBar: AppBar(
             elevation: 0,
-            leading: Icon(Icons.apps),
+            leading:  Icon(Icons.apps),
+    
             actions: <Widget>[
               Align(
                 alignment: Alignment.centerLeft,

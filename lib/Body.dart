@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_app2/Const.dart';
+// import 'Models.dart';
 
 class BodyPage extends StatelessWidget {
   @override
@@ -63,7 +64,7 @@ class BodyPage extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
                 child: Container(
-                  padding: EdgeInsets.all(1),
+                  padding: EdgeInsets.only(left: 10),
                   child: Stack(
                     alignment: Alignment.topLeft,
                     children: <Widget>[
@@ -75,16 +76,29 @@ class BodyPage extends StatelessWidget {
                               "Meet&Greet",
                               style: Theme.of(context)
                                   .textTheme
-                                  .headline2
+                                  .headline1
                                   .copyWith(
                                     color: Colors.black,
-                                    fontSize: 30,
+                                    fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "OpenSans-SemiBold",
                                   ),
                             ),
-                            Text("Adoptable pets \n Located in over\n 1,600 Stores.",
-                             style: Theme.of(context)
+                            Text(
+                              "Adoptable pets ",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline2
+                                  .copyWith(
+                                    color: Colors.black,
+                                    fontSize: 29,
+                                    fontFamily: "Cairo-SemiBold",
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                            Text(
+                              "Located in over\n 1,600 Stores.",
+                              style: Theme.of(context)
                                   .textTheme
                                   .headline5
                                   .copyWith(
@@ -92,16 +106,15 @@ class BodyPage extends StatelessWidget {
                                     fontSize: 18,
                                     fontFamily: "Cairo-SemiBold",
                                   ),
-
                             )
                           ],
                         ),
                       ),
                       Align(
-                        alignment: Alignment.centerRight,
+                        alignment: Alignment.topRight,
                         child: Image.asset(
-                          'assets/image/resize.jpeg',
-                          height: 100,
+                          'assets/image/resize-removebg.png',
+                          height: 700,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -109,16 +122,21 @@ class BodyPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(
-                "Featured pets ",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.left,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Featured pets ",
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                  Icon(
+                    Icons.art_track,
+                    color: Colors.black,
+                  ),
+                ],
               ),
-              Icon(
-                Icons.art_track,
-                color: Colors.black,
-              ),
+              
             ],
           ),
         ),
