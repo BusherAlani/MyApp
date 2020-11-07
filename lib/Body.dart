@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_app2/Const.dart';
-// import 'Models.dart';
+import 'Data.dart';
+import 'CardItem.dart';
 
 class BodyPage extends StatelessWidget {
   @override
@@ -55,16 +56,16 @@ class BodyPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(13),
-                height: 130,
-                width: 360,
+                height: 135,
+                width: 355,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Colors.amber[600],
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
                 child: Container(
-                  padding: EdgeInsets.only(left: 10),
+                  padding:
+                      EdgeInsets.only(left: 18, right: 5, top: 10, bottom: 3),
                   child: Stack(
                     alignment: Alignment.topLeft,
                     children: <Widget>[
@@ -79,7 +80,7 @@ class BodyPage extends StatelessWidget {
                                   .headline1
                                   .copyWith(
                                     color: Colors.black,
-                                    fontSize: 18,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "OpenSans-SemiBold",
                                   ),
@@ -91,20 +92,19 @@ class BodyPage extends StatelessWidget {
                                   .headline2
                                   .copyWith(
                                     color: Colors.black,
-                                    fontSize: 29,
+                                    fontSize: 25,
                                     fontFamily: "Cairo-SemiBold",
-                                    fontWeight: FontWeight.bold,
                                   ),
                             ),
                             Text(
-                              "Located in over\n 1,600 Stores.",
+                              "Located in over\n1,600 Stores.",
                               style: Theme.of(context)
                                   .textTheme
                                   .headline5
                                   .copyWith(
                                     color: Colors.black,
-                                    fontSize: 18,
-                                    fontFamily: "Cairo-SemiBold",
+                                    fontSize: 15,
+                                    fontFamily: "OpenSans-SemiBold",
                                   ),
                             )
                           ],
@@ -123,7 +123,7 @@ class BodyPage extends StatelessWidget {
                 ),
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
                     "Featured pets ",
@@ -136,7 +136,14 @@ class BodyPage extends StatelessWidget {
                   ),
                 ],
               ),
-              
+              Expanded(
+                child: ListView.builder(
+                  itemCount: listCat.length,
+                  itemBuilder: (context, int key) {
+                    return CardItem(index: key);
+                  },
+                ),
+              ),
             ],
           ),
         ),

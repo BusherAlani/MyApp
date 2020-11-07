@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_app2/Body.dart';
 import 'Const.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -21,21 +22,16 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.teal[900],
           appBar: AppBar(
             elevation: 0,
-            leading:  Icon(Icons.apps),
-    
+            leading: IconButton(icon: Icon(Icons.apps), onPressed: () {}),
             actions: <Widget>[
-              Align(
-                alignment: Alignment.centerLeft,
-                child: CircleAvatar(
-                  backgroundColor: Colors.black,
-                  radius: 28,
-                  backgroundImage: NetworkImage(
-                      "https://gigantic.store/wp-content/uploads/2019/04/09.jpg"),
-                ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(24.0),
+                child: Image.network(
+                    "https://gigantic.store/wp-content/uploads/2019/04/09.jpg"),
               ),
             ],
           ),
-          body:BodyPage() , 
+          body: BodyPage(),
         ));
   }
 }
